@@ -1,0 +1,70 @@
+-- Bootstrap lazy.nvim
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+  local lazyrepo = "https://github.com/folke/lazy.nvim.git"
+  local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
+  if vim.v.shell_error ~= 0 then
+    vim.api.nvim_echo({
+      { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
+      { out, "WarningMsg" },
+      { "\nPress any key to exit..." },
+    }, true, {})
+    vim.fn.getchar()
+    os.exit(1)
+  end
+end
+vim.opt.rtp:prepend(lazypath)
+
+-- Make sure to setup `mapleader` and `maplocalleader` before
+-- loading lazy.nvim so that mappings are correct.
+-- This is also a good place to setup other settings (vim.opt)
+vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
+
+-- Disable netrw as we're using a different file browser
+vim.g.loaded_netrwPlugin = 1
+vim.g.loaded_netrw = 1
+
+-- Tab options
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
+vim.opt.smarttab = true
+-- GUI options
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.colorcolumn = "80"
+vim.opt.signcolumn = "yes"
+
+-- Search options
+vim.opt.smartcase = true
+vim.opt.hlsearch = true
+
+-- Navigation options
+vim.opt.matchpairs = "(:),[:],{:},<:>"
+vim.opt.scroll = 15
+
+vim.opt.undofile = true
+
+vim.lsp.enable('lua_ls')
+vim.lsp.enable('gopls')
+
+require("config.keybinds")
+
+-- Setup lazy.nvim
+require("lazy").setup({
+  spec = {
+    {'tknightz/telescope-termfinder.nvim'},
+
+    require("plugins.alpha"),
+    require("plugins.cmp"),
+    require("plugins.gruvbox"),
+    require("plugins.lspconfig"),
+    require("plugins.mason"),
+    require("plugins.telescope"),
+    require("plugins.toggleterm"),
+    require("plugins.which-key"),
+  },
+  install = { colorscheme = { "gruvbox-material" } },
+  checker = { enabled = true },
+})
