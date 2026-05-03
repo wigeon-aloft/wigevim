@@ -69,9 +69,10 @@ require("lazy").setup({
     require("plugins.lspconfig"),
     require("plugins.mason"),
     require("plugins.telescope"),
+    require("plugins.todo-comments"),
     require("plugins.toggleterm"),
     require("plugins.which-key"),
   },
-    install = { colorscheme = { "gruvbox-material" } },
+    colorscheme = "gruvbox-material",
     checker = { enabled = true },
 })

@@ -1,3 +1,4 @@
+-- TELESCOPE
 -- general search bindings '<leader>f'
 vim.keymap.set('n', '<leader>ff', "<CMD>Telescope find_files<CR>", { desc = 'telescope [f]iles' })
 vim.keymap.set('n', '<leader>fb', "<CMD>Telescope buffers<CR>", { desc = 'telescope [b]uffers'})
@@ -5,6 +6,11 @@ vim.keymap.set('n', '<leader>fd', "<CMD>Telescope diagnostics<CR>", { desc = 'te
 vim.keymap.set('n', '<leader>fg', "<CMD>Telescope live_grep<CR>", { desc = 'telescope [g]rep'})
 vim.keymap.set('n', '<leader>fw', "<CMD>Telescope grep_string<CR>", { desc = 'telescope [w]ord'})
 vim.keymap.set('n', '<leader>fh', "<CMD>Telescope help_tags<CR>", { desc = 'telescope [h]elp'})
+
+-- todo-comment search bindings
+vim.keymap.set('n', '<leader>dt', "<CMD>TodoTelescope keywords=TODO,FIX<CR>", { desc = '[t]odo'})
+vim.keymap.set('n', '<leader>da', "<CMD>TodoTelescope<CR>", { desc = 'todo [a]ll' })
+vim.keymap.set('n', '<leader>dq', "<CMD>TodoQuickFix<CR>", { desc = 'todo [q]uickfix'})
 
 -- lsp search key bindings '<leader>l'
 vim.keymap.set('n', '<leader>ld', "<CMD>Telescope lsp_definitions<CR>", { desc = 'lsp [d]efinitions'})
