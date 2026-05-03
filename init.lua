@@ -15,21 +15,27 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- Make sure to setup `mapleader` and `maplocalleader` before
--- loading lazy.nvim so that mappings are correct.
--- This is also a good place to setup other settings (vim.opt)
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
--- Disable netrw as we're using a different file browser
+-- Editing options
+vim.opt.wrap = false
+
+-- Tell nvim netrw is already loaded, this effectively disables it
 vim.g.loaded_netrwPlugin = 1
 vim.g.loaded_netrw = 1
 
 -- Tab options
 vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.smarttab = true
+
+-- Show chars to show in place of invisible characters
+vim.opt.listchars = "tab:  ,leadtab:» ,trail:·,leadmultispace:›   ,extends:⭢,precedes:⭠"
+vim.opt.list = true
+
 -- GUI options
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -44,6 +50,7 @@ vim.opt.hlsearch = true
 vim.opt.matchpairs = "(:),[:],{:},<:>"
 vim.opt.scroll = 15
 
+-- Miscellaneous
 vim.opt.undofile = true
 
 vim.lsp.enable('lua_ls')
