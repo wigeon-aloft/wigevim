@@ -19,6 +19,7 @@ vim.g.maplocalleader = "\\"
 
 -- Editing options
 vim.opt.wrap = false
+vim.opt.foldlevelstart = 1
 
 -- Tell nvim netrw is already loaded, this effectively disables it
 vim.g.loaded_netrwPlugin = 1
@@ -56,6 +57,9 @@ vim.lsp.enable('lua_ls')
 vim.lsp.enable('gopls')
 
 require("config.keybinds")
+require("config.autocmds")
+
+-- FIX: when lazy installs new plugins at startup it doesn't use the gruvbox theme
 
 -- Setup lazy.nvim
 require("lazy").setup({
@@ -70,6 +74,7 @@ require("lazy").setup({
     require("plugins.telescope"),
     require("plugins.todo-comments"),
     require("plugins.toggleterm"),
+    require("plugins.treesitter"),
     require("plugins.trouble"),
     require("plugins.which-key"),
   },
