@@ -1,3 +1,5 @@
+-- TODO: move lazy configuration to its own file in the config module
+
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -39,9 +41,9 @@ vim.opt.list = true
 
 -- GUI options
 vim.opt.number = true
+vim.opt.numberwidth = 3
 vim.opt.relativenumber = true
-vim.opt.colorcolumn = "80"
-vim.opt.signcolumn = "yes"
+vim.opt.signcolumn = "yes:2"
 
 -- Search options
 vim.opt.smartcase = true
