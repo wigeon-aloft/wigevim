@@ -65,11 +65,11 @@ require("config.autocmds")
 -- Setup lazy.nvim
 require("lazy").setup({
     spec = {
-    {'tknightz/telescope-termfinder.nvim'},
+    { "tknightz/telescope-termfinder.nvim" },
+    { "tpope/vim-fugitive" },
 
     require("plugins.alpha"),
     require("plugins.cmp"),
-    require("plugins.fugitive"),
     require("plugins.gitsigns"),
     require("plugins.gruvbox"),
     require("plugins.lspconfig"),
