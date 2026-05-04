@@ -13,6 +13,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
     os.exit(1)
     end
 end
+
 vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
@@ -70,6 +71,7 @@ require("lazy").setup({
     require("plugins.cmp"),
     require("plugins.gruvbox"),
     require("plugins.lspconfig"),
+    require("plugins.lualine"),
     require("plugins.mason"),
     require("plugins.telescope"),
     require("plugins.todo-comments"),
