@@ -69,6 +69,8 @@ require("lazy").setup({
 
     require("plugins.alpha"),
     require("plugins.cmp"),
+    require("plugins.fugitive"),
+    require("plugins.gitsigns"),
     require("plugins.gruvbox"),
     require("plugins.lspconfig"),
     require("plugins.lualine"),
