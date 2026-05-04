@@ -1,22 +1,18 @@
 -- general search bindings using telescope '<leader>f'
-vim.keymap.set('n', '<leader>ff', "<CMD>Telescope find_files<CR>", { desc = 'telescope [f]iles' })
-vim.keymap.set('n', '<leader>fb', "<CMD>Telescope buffers<CR>", { desc = 'telescope [b]uffers'})
-vim.keymap.set('n', '<leader>fd', "<CMD>Telescope diagnostics<CR>", { desc = 'telescope [d]iagnostics'})
-vim.keymap.set('n', '<leader>fg', "<CMD>Telescope live_grep<CR>", { desc = 'telescope [g]rep'})
-vim.keymap.set('n', '<leader>fw', "<CMD>Telescope grep_string<CR>", { desc = 'telescope [w]ord'})
-vim.keymap.set('n', '<leader>fh', "<CMD>Telescope help_tags<CR>", { desc = 'telescope [h]elp'})
+vim.keymap.set('n', '<leader>ff', "<CMD>Telescope find_files<CR>", { desc = 'find [f]iles' })
+vim.keymap.set('n', '<leader>fb', "<CMD>Telescope buffers<CR>", { desc = 'find [b]uffers'})
+vim.keymap.set('n', '<leader>fd', "<CMD>Telescope diagnostics<CR>", { desc = 'find [d]iagnostics'})
+vim.keymap.set('n', '<leader>fg', "<CMD>Telescope live_grep<CR>", { desc = 'find [g]rep'})
+vim.keymap.set('n', '<leader>fw', "<CMD>Telescope grep_string<CR>", { desc = 'find [w]ord'})
+vim.keymap.set('n', '<leader>fh', "<CMD>Telescope help_tags<CR>", { desc = 'find [h]elp'})
+vim.keymap.set('n', '<leader>ft', "<CMD>TodoTelescope<CR>", { desc = 'find [t]odos' })
+
+-- terminal keybinds
+vim.keymap.set('n', '<leader><leader>', "<CMD>ToggleTerm<CR>", { desc = 'terminal [t]oggle' })
+vim.keymap.set('t', '<ESC><ESC>', "<CMD>ToggleTerm<CR>", { desc = 'terminal [t]oggle' })
 
 -- todo-comment search bindings '<leader>d'
-vim.keymap.set('n', '<leader>dt', "<CMD>TodoTelescope keywords=TODO,FIX<CR>", { desc = '[t]odo'})
-vim.keymap.set('n', '<leader>da', "<CMD>TodoTelescope<CR>", { desc = 'todo [a]ll' })
-vim.keymap.set('n', '<leader>dq', "<CMD>TodoQuickFix<CR>", { desc = 'todo [q]uickfix'})
-
--- lsp search key bindings '<leader>l'
-vim.keymap.set('n', '<leader>ld', "<CMD>Telescope lsp_definitions<CR>", { desc = 'lsp [d]efinitions'})
-vim.keymap.set('n', '<leader>lr', "<CMD>Telescope lsp_references<CR>", { desc = 'lsp [r]eferences'})
-vim.keymap.set('n', '<leader>lt', "<CMD>Telescope lsp_type_definitions<CR>", { desc = 'lsp [t]ype definitions'})
-vim.keymap.set('n', '<leader>ls', "<CMD>Telescope lsp_document_symbols<CR>", { desc = 'lsp [s]ymbols'})
-
+vim.keymap.set('n', '<leader>t', "<CMD>TodoTrouble toggle<CR>", { desc = 'todos'})
 
 -- git search key bindings using telescope '<leader>g'
 vim.keymap.set('n', '<leader>gb', "<CMD>Telescope git_branches<CR>", { desc = 'git [b]ranches'})

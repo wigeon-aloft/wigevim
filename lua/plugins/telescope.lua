@@ -5,16 +5,21 @@ return {
         'nvim-lua/plenary.nvim',
         { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
     },
-    opts = {
-        defaults = {
+    -- TODO: this is a test todo, please remove
+    opts = function(_, opts)
+        local open_with_trouble = require("trouble.sources.telescope").open
+        opts["defaults"] = {
             layout_strategy = "vertical",
-
             mappings = {
                 i = {
                     ["<C-s>"] = "cycle_previewers_next",
                     ["<C-a>"] = "cycle_previewers_prev",
                     ["<C-h>"] = "which_key",
+                    ["<C-t>"] = open_with_trouble,
                     ["<ESC>"] = "close",
+                },
+                n = {
+                    ["<C-t>"] = open_with_trouble,
                 },
             },
             vimgrep_arguments = {
@@ -27,8 +32,8 @@ return {
                 -- allow searching in hidden files (except for .git)
                 "--hidden", "--glob", "!**/.git/*",
             },
-        },
-        pickers = {
+        }
+        opts["pickers"] = {
             find_files = {
                 find_command = {
                     "fd",
@@ -37,5 +42,5 @@ return {
                 },
             },
         }
-    }
+    end,
 }
