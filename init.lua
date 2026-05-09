@@ -56,8 +56,10 @@ vim.opt.scroll = 15
 -- Miscellaneous
 vim.opt.undofile = true
 
-vim.lsp.enable('lua_ls')
+vim.lsp.enable('bashls')
 vim.lsp.enable('gopls')
+vim.lsp.enable('lua_ls')
+vim.lsp.enable('zls')
 
 require("config.keybinds")
 require("config.autocmds")
