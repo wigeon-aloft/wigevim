@@ -1,10 +1,21 @@
+-- Find files (excluding dirs)
+local function find_files_only()
+    require('telescope.builtin').find_files{
+        find_command = {'find', '-type', 'f' }
+    }
+end
+
+-- Temporarily disable search highlighting with double ESC tap
+vim.keymap.set('n', '<ESC><ESC>', "<CMD>noh<CR>", { desc = 'disable highlighting' })
+
 -- general search bindings using telescope '<leader>f'
-vim.keymap.set('n', '<leader>ff', "<CMD>Telescope find_files<CR>", { desc = 'find [f]iles' })
+vim.keymap.set('n', '<leader>ff', find_files_only, { desc = 'find [f]iles' })
 vim.keymap.set('n', '<leader>fb', "<CMD>Telescope buffers<CR>", { desc = 'find [b]uffers'})
 vim.keymap.set('n', '<leader>fd', "<CMD>Telescope diagnostics<CR>", { desc = 'find [d]iagnostics'})
 vim.keymap.set('n', '<leader>fg', "<CMD>Telescope live_grep<CR>", { desc = 'find [g]rep'})
 vim.keymap.set('n', '<leader>fw', "<CMD>Telescope grep_string<CR>", { desc = 'find [w]ord'})
 vim.keymap.set('n', '<leader>fh', "<CMD>Telescope help_tags<CR>", { desc = 'find [h]elp'})
+vim.keymap.set('n', '<leader>fn', "<CMD>Telescope find_files cwd=~/.config/nvim<CR>", { desc = 'find [n]eovim files' })
 vim.keymap.set('n', '<leader>ft', "<CMD>TodoTelescope<CR>", { desc = 'find [t]odos' })
 
 -- terminal keybinds
