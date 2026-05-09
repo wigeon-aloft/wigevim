@@ -10,11 +10,11 @@ return {
         },
         sections = {
             lualine_a = {{ 'mode', fmt = function(str) return str:sub(1,3) end }},
-            lualine_b = {'filename'},
+            lualine_b = {'buffers'},
             lualine_c = {},
             lualine_x = {'diagnostics'},
-            lualine_y = {'branch'},
-            lualine_z = {'location'},
+            lualine_y = {'branch', 'diff'},
+            lualine_z = {{'location', padding = 0}},
         },
     }
 }
