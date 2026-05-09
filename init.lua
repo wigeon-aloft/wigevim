@@ -69,6 +69,8 @@ require("lazy").setup({
     spec = {
     { "tknightz/telescope-termfinder.nvim" },
     { "tpope/vim-fugitive" },
+    { "tpope/vim-surround" },
+    { "tpope/vim-repeat" },
 
     require("plugins.alpha"),
     require("plugins.cmp"),
@@ -77,6 +79,7 @@ require("lazy").setup({
     require("plugins.lspconfig"),
     require("plugins.lualine"),
     require("plugins.mason"),
+    require("plugins.snacks"),
     require("plugins.telescope"),
     require("plugins.todo-comments"),
     require("plugins.toggleterm"),
