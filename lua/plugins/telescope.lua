@@ -5,7 +5,6 @@ return {
         'nvim-lua/plenary.nvim',
         { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
     },
-    -- TODO: this is a test todo, please remove
     opts = function(_, opts)
         local open_with_trouble = require("trouble.sources.telescope").open
         opts["defaults"] = {
