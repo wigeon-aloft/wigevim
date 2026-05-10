@@ -43,3 +43,9 @@ vim.keymap.set('n', "<leader>cd", "<CMD>Trouble lsp_definitions<CR>", { desc = "
 vim.keymap.set('n', "<leader>ct", "<CMD>Trouble lsp_type_definitions toggle<CR>", { desc = "goto [t]ype definintion" } )
 vim.keymap.set('n', "<leader>cs", "<CMD>Trouble lsp_document_symbols win.position=right<CR>", { desc = "show [s]ymbols" } )
 
+-- Remaps
+-- Use ctrl+direction to change pane/split
+vim.keymap.set('n', "<c-j>", "<CMD>wincmd j<CR>", { desc = "go down split" })
+vim.keymap.set('n', "<c-k>", "<CMD>wincmd k<CR>", { desc = "go up split" })
+vim.keymap.set('n', "<c-l>", "<CMD>wincmd l<CR>", { desc = "go right split" })
+vim.keymap.set('n', "<c-h>", "<CMD>wincmd h<CR>", { desc = "go left split" })
